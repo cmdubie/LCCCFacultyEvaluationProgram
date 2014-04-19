@@ -2,27 +2,43 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    <title></title>
+    <title>Lorain County Community College Faculty Evaluation Program</title>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href="css/normalize.css" type="text/css" rel="stylesheet" />
+    <link href="css/base.css" type="text/css" rel="stylesheet" />
+    <!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
+    <!--[if lt IE 9]> <script src="html5shiv.js"></script> <![endif]-->
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body class="gradient">
     <form id="form1" runat="server">
-    <div>
+    <header id="pageHeader">
         <asp:ContentPlaceHolder id="headerContent" runat="server">
             
         </asp:ContentPlaceHolder>
-    </div>
-    <div id="appNavigationPane">
-        
-    </div>
-    <div>
+    </header>
+    <nav id="mainNav">
+        <img src="images/lccc-logo.png" title="Lorain County Community College" id="logo" alt="Lorain County Community College logo"/>
+        <nav id="subNav">
+            <h3 class="gradient">Faculty Evaluation Program</h3>
+            <ul>
+                <li><a href="data.aspx" title="Review and Enter information into the system">Data Review/Entry</a></li>
+                <li><a href="reports.aspx" title="Print and email various reports">Reports</a></li>
+                <li><a href="mainenance.aspx" title="Perform database back-up and other maintenance tasks" >Maintenance</a></li>
+            </ul>
+        </nav>
+    </nav>
+    <article id="articleContent">
         <asp:ContentPlaceHolder id="pageContent" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
+    </article>
+    <footer>
+        
+    </footer>
     </form>
 </body>
 </html>
