@@ -25,11 +25,11 @@ body {
     color: black; 
     width: 80%; 
     max-width: 1200px;
-    -moz-min-width: 900px;
-    -ms-min-width: 900px;
-    -o-min-width: 900px;
-    -webkit-min-width: 900px;
-    min-width: 900px;
+    -moz-min-width: 1080px;
+    -ms-min-width: 1080px;
+    -o-min-width: 1080px;
+    -webkit-min-width: 1080px;
+    min-width: 1080px;
     height: 100%;
     padding: 60px 20px 20px;
     background: #ccc491; /* Old browsers */

@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="report.master.cs" Inherits="report" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="headerContent" Runat="Server">
+        <h1>Reports</h1>
+    <nav class="inlineNav">
+        <ul>
+            <li><a class="subButton" href="email.aspx" title="Send email to full-time faculty">Email</a></li>
+            <li><a class="subButton" href="coversheets.aspx" title="Print cover sheets">Cover Sheets</a></li>
+            <li><a class="subButton" href="commentreports.aspx" title="Print comment reports">Comment Reports</a></li>
+        </ul>
+    </nav>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageContent" Runat="Server">
+        <asp:ContentPlaceHolder ID="pageContentSub" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
