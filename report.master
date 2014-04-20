@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headerContent" Runat="Server">
-        <h1>Reports</h1>
+    <h1>Reports</h1>
     <nav class="inlineNav">
         <ul>
             <li><a class="subButton" href="email.aspx" title="Send email to full-time faculty">Email</a></li>

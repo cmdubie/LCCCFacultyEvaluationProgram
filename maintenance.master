@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="maintenance.master.cs" Inherits="maintenance" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="headerContent" Runat="Server">
+    <h1>Maintenance</h1>
+    <nav class="inlineNav">
+        <ul>
+            <li><a class="subButton" href="users.aspx" title="Edit information for users">Users</a></li>
+            <li><a class="subButton" href="backup.aspx" title="Back-up the database">Back-up</a></li>
+            <li><a class="subButton" href="purge.aspx" title="Remove older entries from the database">Purge</a></li>
+        </ul>
+    </nav>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageContent" Runat="Server">
+    <asp:ContentPlaceHolder ID="pageContentSub" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
