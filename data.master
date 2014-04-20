@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="data.master.cs" Inherits="data" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="headerContent" Runat="Server">
+    <h1>Data Entry and Review</h1>
+    <nav class="inlineNav">
+        <ul>
+            <li><a class="subButton" href="import.aspx" title="Import data from a PeopleSoft XML file">Import</a></li>
+            <li><a class="subButton" href="faculty.aspx" title="Display and change faculty information">Faculty</a></li>
+            <li><a class="subButton" href="section.aspx" title="Display and change class information">Class</a></li>
+            <li><a class="subButton" title="Display and enter comments">Comments</a>
+                <ul>
+                    <li><a class="subButton" href="commentview.aspx" title="View comments">View</a></li>
+                    <li><a class="subButton" href="commententer.aspx" title="Enter comments">Enter</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+    <asp:ContentPlaceHolder ID="inlineNavSub" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageContent" Runat="Server">
+    <asp:ContentPlaceHolder ID="pageContentSub" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

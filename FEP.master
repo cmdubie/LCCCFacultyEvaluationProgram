@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="css/normalize.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
-    <!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
+    <!--[if gte IE 9]><style type="text/css">.gradient {-webkit-filter: none;-moz-filter: none;-o-filter: none;filter: none;} </style><![endif]-->
     <!--[if lt IE 9]> <script src="html5shiv.js"></script> <![endif]-->
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -21,7 +21,7 @@
         </asp:ContentPlaceHolder>
     </header>
     <nav id="mainNav">
-        <img src="images/lccc-logo.png" title="Lorain County Community College" id="logo" alt="Lorain County Community College logo"/>
+        <a href="default.aspx" title="Home"><img src="images/lccc-logo.png" title="Lorain County Community College" id="logo" alt="Lorain County Community College logo"/></a>
         <nav id="subNav">
             <h3 class="gradient">Faculty Evaluation Program</h3>
             <ul>
