@@ -3,7 +3,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
-    <p>There will be two drop-down boxes to select the term and the class/section.  The term selection will default to the most current term.</p>
+    
+    <h2>View Comments</h2>
+
+    <label>Term:</label>
+    
+    <asp:DropDownList ID="termDropDownList" runat="server">
+        <asp:ListItem>--default to current term--</asp:ListItem>
+    </asp:DropDownList>
+    
+    <label>Class/Section:</label>
+    
+    <asp:DropDownList ID="classDropDownList" runat="server">
+        <asp:ListItem>--select a class/section--</asp:ListItem>
+    </asp:DropDownList>
+
     <p>This page will display comments for the class selected.</p>
+
 </asp:Content>
 

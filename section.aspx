@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
-    <h2>Class</h2>
+    <h2>Class/Section</h2>
 
     <label>Term:</label>
     
