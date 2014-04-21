@@ -1,7 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/report.master" AutoEventWireup="true" CodeFile="coversheets.aspx.cs" Inherits="coversheets" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="pageContentSub" Runat="Server">
-    <p>There will be a drop-down menu to select the term.  It will default to the most recent term.</p>
-    <p>There will be a "Print" button.</p>
+    
+    <h2>Cover Sheets</h2>
+    
+    <label>Term:</label>
+    
+    <asp:DropDownList ID="termDropDownList" runat="server">
+        <asp:ListItem>--default to current term--</asp:ListItem>
+    </asp:DropDownList>
+
+    <p>A gridview will display all classes that are flagged for evaluation.</p>
+    
+    <asp:Button ID="printCoverSheetsButton" runat="server" Text="Print" />    
+
 </asp:Content>
 
