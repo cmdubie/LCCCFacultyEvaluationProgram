@@ -3,7 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
-    <p>There will be a dropdown menu where users will be able to select the term. The term will default to the most current term.</p>
+    
+    <h2>Class</h2>
+
+    <label>Term:</label>
+    
+    <asp:DropDownList ID="termDropDownList" runat="server">
+        <asp:ListItem>--default to current term--</asp:ListItem>
+    </asp:DropDownList>
+    
     <p>This section will have a gridview that will display all information for classes in the database.  Users will be able to edit or delete any entry in the table to make corrections.</p>
+
 </asp:Content>
 

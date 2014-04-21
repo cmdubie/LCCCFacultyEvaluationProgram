@@ -20,6 +20,11 @@ h1 {
     border-bottom: 1px solid black; 
 }
 
+h2 {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: 700;
+}
+
 body {
     margin: auto; 
     color: black; 
