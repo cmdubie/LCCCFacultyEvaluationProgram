@@ -6,7 +6,13 @@
     <h1>Faculty Evaluation Program</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="pageContent" Runat="Server">
-    <p>This page will contain the log in procedure.</p>
-    <p>About stuff goes here.</p>
-</asp:Content>
+    
+    <asp:Panel ID="logInPanel" runat="server">
+        <asp:Login ID="Login" runat="server"></asp:Login>
+    </asp:Panel>
+    
+    <asp:Panel runat="server" ID="aboutPanel">
+       <p>About stuff goes here.</p>        
+    </asp:Panel>
 
+</asp:Content>
