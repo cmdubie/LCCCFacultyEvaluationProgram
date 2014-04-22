@@ -48,7 +48,7 @@ body {
     background: linear-gradient(to bottom,  #ccc491 0,#ffffff 66%,#ccc491 100%); /* W3C */
     -moz-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
     -o-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
-    -webkit-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 ); /* IE6-8 */
 }
 
