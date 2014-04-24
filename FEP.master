@@ -21,7 +21,7 @@
         </asp:ContentPlaceHolder>
     </header>
     <nav id="mainNav">
-        <a href="default.aspx" title="Home"><img src="images/lccc-logo.png" title="Lorain County Community College" id="logo" alt="Lorain County Community College logo"/></a>
+        <a href="index.aspx" title="Home"><img src="images/lccc-logo.png" title="Lorain County Community College" id="logo" alt="Lorain County Community College logo"/></a>
         <nav id="subNav">
             <h3 class="gradient">Faculty Evaluation Program</h3>
             <ul>

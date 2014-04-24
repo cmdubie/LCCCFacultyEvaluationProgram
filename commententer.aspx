@@ -20,12 +20,12 @@
         <asp:ListItem>--select a class/section--</asp:ListItem>
     </asp:DropDownList>
     
-    <div id="commentTextBoxDiv">
+    <asp:panel runat="server" id="commentTextBoxPanel" DefaultButton="addCommentButton">
         
-        <asp:TextBox ID="commentTextBox" runat="server" TextMode="MultiLine" Wrap="True" Rows="15"></asp:TextBox>
-        <asp:Button ID="addCommentButton" runat="server" Text="Add Comment" />
+        <asp:TextBox ID="commentTextBox" runat="server" TextMode="MultiLine" Wrap="True"></asp:TextBox>
+        <asp:Button ID="addCommentButton" runat="server" Text="Add Comment" OnClick="addCommentButton_Click" />
 
-    </div>
+    </asp:panel>
 
 </asp:Content>
 
