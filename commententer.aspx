@@ -1,9 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="commententer.aspx.cs" Inherits="css_commententer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="commententer.aspx.cs" Inherits="commententer" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="inlineNavSub" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
+    <link href="css/commententer.css" type="text/css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
-    
+<asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     <h2>Enter Comments</h2>
 
     <label>Term:</label>
@@ -20,7 +22,7 @@
     
     <div id="commentTextBoxDiv">
         
-        <asp:TextBox ID="commentTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="commentTextBox" runat="server" TextMode="MultiLine" Wrap="True" Rows="15"></asp:TextBox>
         <asp:Button ID="addCommentButton" runat="server" Text="Add Comment" />
 
     </div>

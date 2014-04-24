@@ -1,0 +1,11 @@
+﻿
+#pageContent_pageContentSub_commentTextBox {
+    margin-top: 20px;
+    width: 90%;
+}
+
+#pageContent_pageContentSub_addCommentButton {
+    display: block;
+    float: right;
+    margin: 20px 10% 0 0 ;
+}

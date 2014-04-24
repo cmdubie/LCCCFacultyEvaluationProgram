@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="data.master.cs" Inherits="data" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder runat="server" ID="head2"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headerContent" Runat="Server">
     <h1>Data Entry and Review</h1>
