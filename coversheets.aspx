@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/report.master" AutoEventWireup="true" CodeFile="coversheets.aspx.cs" Inherits="coversheets" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="pageContentSub" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
     <h2>Cover Sheets</h2>
     
