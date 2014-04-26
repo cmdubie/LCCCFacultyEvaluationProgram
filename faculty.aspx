@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     <h2>Faculty</h2>
-        <asp:SqlDataSource ID="FacultyDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [FACULTY] WHERE [EID] = @EID" InsertCommand="INSERT INTO [FACULTY] ([Name], [Email], [Status], [EID]) VALUES (@Name, @Email, @Status, @EID)" SelectCommand="SELECT [Name], [Email], [Status], [EID] FROM [FACULTY]" UpdateCommand="UPDATE [FACULTY] SET [Name] = @Name, [Email] = @Email, [Status] = @Status WHERE [EID] = @EID">
+        <asp:SqlDataSource ID="FacultyDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [FACULTY] WHERE [EID] = @EID" InsertCommand="INSERT INTO [FACULTY] ([Name], [Email], [Status], [EID]) VALUES (@Name, @Email, @Status, @EID)" SelectCommand="SELECT [Name], [Email], [Status], [EID] FROM [FACULTY] ORDER BY [Name]" UpdateCommand="UPDATE [FACULTY] SET [Name] = @Name, [Email] = @Email, [Status] = @Status WHERE [EID] = @EID">
             <DeleteParameters>
                 <asp:Parameter Name="EID" Type="Int32" />
             </DeleteParameters>
@@ -29,7 +29,11 @@
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                 <asp:CommandField ShowEditButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
     <p>This section will have a gridview that will display all information for faculty members in the database.  Users will be able to edit or delete any entry in the table to make corrections.</p>

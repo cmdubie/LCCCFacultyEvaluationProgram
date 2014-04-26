@@ -167,6 +167,27 @@ a:hover {
     min-height: 600px;
 }
 
+label {
+    padding: 0 5px 0;
+}
+
+tr {
+    max-height: 10px;
+}
+
+th {
+    background-color: #00549f;
+    color: white;
+    padding: 5px;
+}
+
+td {
+    background-color: #ccc491;
+    padding: 0 5px;
+    padding-top: -15px;
+    padding-bottom: -15px;
+}
+
 .messageLabel {
     color: red;
     font-weight: 600;

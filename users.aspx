@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/maintenance.master" AutoEventWireup="true" CodeFile="users.aspx.cs" Inherits="users" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="pageContentSub" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
     <h2>Users</h2>
 

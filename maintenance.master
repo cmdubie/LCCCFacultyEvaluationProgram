@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="maintenance.master.cs" Inherits="maintenance" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder runat="server" ID="head2"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="headerContent" Runat="Server">
     <h1>Maintenance</h1>
