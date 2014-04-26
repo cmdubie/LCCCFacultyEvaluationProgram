@@ -23,7 +23,7 @@
     <nav id="mainNav">
         <a href="index.aspx" title="Home"><img src="images/lccc-logo.png" title="Lorain County Community College" id="logo" alt="Lorain County Community College logo"/></a>
         <nav id="subNav">
-            <h3 class="gradient">Faculty Evaluation Program</h3>
+            <h3>Faculty Evaluation Program</h3>
             <ul>
                 <li><a href="data.aspx" title="Review and Enter information into the system">Data Entry and Review</a></li>
                 <li><a href="reports.aspx" title="Print and email various reports">Reports</a></li>
@@ -37,7 +37,7 @@
         </asp:ContentPlaceHolder>
     </article>
     <footer>
-        
+        <span>Created in 2014</span>        
     </footer>
     </form>
 </body>

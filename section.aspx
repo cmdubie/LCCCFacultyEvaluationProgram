@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="section.aspx.cs" Inherits="css_class" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="section.aspx.cs" Inherits="section" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="inlineNavSub" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
     <h2>Class/Section</h2>
 

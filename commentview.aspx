@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="commentview.aspx.cs" Inherits="commentview" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="inlineNavSub" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="pageContentSub" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
     <h2>View Comments</h2>
 
@@ -21,4 +23,5 @@
     <p>This page will display comments for the class selected.</p>
 
 </asp:Content>
+
 

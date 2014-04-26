@@ -1,8 +1,7 @@
 ﻿@charset "UTF-8";
 
-html { 
+html {
     background-color: black;
-    height: 100%;
 }
 
 #pageHeader { 
@@ -35,7 +34,6 @@ body {
     -o-min-width: 1080px;
     -webkit-min-width: 1080px;
     min-width: 1080px;
-    height: 100%;
     padding: 60px 20px 20px;
     background: #ccc491; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -162,13 +160,18 @@ a:hover {
     box-shadow: 4px 4px 4px #7c7441;
 }
 
-#articleContent { 
+#articleContent {
     float: right;
-    width: 72%;
     padding: 15px 20px 0 0;
+    width: 72%;
+    min-height: 600px;
 }
 
 .messageLabel {
     color: red;
     font-weight: 600;
+}
+
+footer {
+    clear: both;
 }
