@@ -46,7 +46,7 @@ body {
     background: linear-gradient(to bottom,  #ccc491 0,#ffffff 66%,#ccc491 100%); /* W3C */
     -moz-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
     -o-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
-    -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
+    -webkit-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 );
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc491', endColorstr='#ccc491',GradientType=0 ); /* IE6-8 */
 }
 
@@ -169,23 +169,6 @@ a:hover {
 
 label {
     padding: 0 5px 0;
-}
-
-tr {
-    max-height: 10px;
-}
-
-th {
-    background-color: #00549f;
-    color: white;
-    padding: 5px;
-}
-
-td {
-    background-color: #ccc491;
-    padding: 0 5px;
-    padding-top: -15px;
-    padding-bottom: -15px;
 }
 
 .messageLabel {
