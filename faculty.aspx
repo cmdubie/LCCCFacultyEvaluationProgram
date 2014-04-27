@@ -72,6 +72,5 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-    <p>This section will have a gridview that will display all information for faculty members in the database.  Users will be able to edit or delete any entry in the table to make corrections.</p>
 </asp:Content>
 

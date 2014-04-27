@@ -37,7 +37,6 @@
         </asp:ContentPlaceHolder>
     </article>
     <footer>
-        <span>Created in 2014</span>        
     </footer>
     </form>
 </body>
