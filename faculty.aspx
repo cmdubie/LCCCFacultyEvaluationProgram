@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="faculty.aspx.cs" Inherits="faculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
-    <link rel="stylesheet" type="text/css" href="css/faculty.css"/>
+    <link rel="stylesheet" type="text/css" href="css/gridview.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>
