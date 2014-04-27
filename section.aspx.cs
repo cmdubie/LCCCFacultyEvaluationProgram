@@ -10,7 +10,7 @@ public partial class Section : System.Web.UI.Page
             {
                 termDropDownList.SelectedValue = Session["stickyTerm"].ToString();
             }
-        }     
+        }
     }
 
     protected void StickyTermSelected(object sender, EventArgs e)
