@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="section.aspx.cs" Inherits="section" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="section.aspx.cs" Inherits="Section" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
     <link rel="stylesheet" type="text/css" href="css/gridview.css"/>
+    <link rel="stylesheet" type="text/css" href="css/section.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>
@@ -13,7 +14,7 @@
 
     <asp:SqlDataSource ID="TermDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Term] FROM [COURSESECTION]"></asp:SqlDataSource>
     
-    <asp:DropDownList ID="termDropDownList" runat="server" AppendDataBoundItems="True" DataSourceID="TermDataSource" DataTextField="Term" DataValueField="Term" AutoPostBack="True" >
+    <asp:DropDownList ID="termDropDownList" runat="server" AppendDataBoundItems="True" DataSourceID="TermDataSource" DataTextField="Term" DataValueField="Term" AutoPostBack="True" OnSelectedIndexChanged="StickyTermSelected">
         <asp:ListItem Value="-1">--select a term--</asp:ListItem>
     </asp:DropDownList>
     
@@ -29,13 +30,14 @@ WHERE (cs.Term = @Param1)">
 
     <asp:GridView ID="ClassSectionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Term,ClassNum" DataSourceID="ClassGVSqlDataSource">
         <Columns>
-            <asp:BoundField DataField="ClassNum" HeaderText="ClassNum" ReadOnly="True" SortExpression="ClassNum" />
-            <asp:BoundField DataField="CourseID" HeaderText="CourseID" SortExpression="CourseID" />
+            <asp:BoundField DataField="ClassNum" HeaderText="No." ReadOnly="True" SortExpression="ClassNum" />
+            <asp:BoundField DataField="CourseID" HeaderText="Course" SortExpression="CourseID" />
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-            <asp:BoundField DataField="Section" HeaderText="Section" SortExpression="Section" />
-            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-            <asp:BoundField DataField="Evaluation" HeaderText="Evaluation" SortExpression="Evaluation" />
-            <asp:BoundField DataField="NumberStudents" HeaderText="NumberStudents" SortExpression="NumberStudents" />
+            <asp:BoundField DataField="Section" HeaderText="Sect." SortExpression="Section" />
+            <asp:BoundField DataField="Name" HeaderText="Instructor" SortExpression="Name" />
+            <asp:BoundField DataField="NumberStudents" HeaderText="Enrolled" SortExpression="NumberStudents" />
+            <asp:BoundField DataField="Evaluation" HeaderText="Eval?" SortExpression="Evaluation" />
+            <asp:CommandField ShowEditButton="True" />
         </Columns>
     </asp:GridView>
     

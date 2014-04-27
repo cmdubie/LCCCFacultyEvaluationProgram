@@ -1,4 +1,5 @@
 ﻿table {
+    margin-top: 25px;
     -webkit-box-shadow: 4px 4px 4px #7c7441;
     -ms-box-shadow: 4px 4px 4px #7c7441;
     box-shadow: 4px 4px 4px #7c7441;
@@ -26,6 +27,7 @@ th {
     background-color: #00549f;
     border: 1px solid #00215a;
     border-top: none;
+    font-size: .8em;
     color: white;
     padding: 8px;
  }
@@ -34,18 +36,14 @@ td {
     background-color: #ccc491;
     border: 1px solid #7c7441;
     text-align: center;
-    padding: 0 8px;
-    line-height: 20px;
+    font-size: .8em;
+    line-height: 50%;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 td:first-child {
-    text-align: left;
     border-left: none;
-}
-
-td:nth-child(2) {
-    width: 63px;
-    text-align: right;
 }
 
 tr:last-child td {

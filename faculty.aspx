@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
     <link rel="stylesheet" type="text/css" href="css/gridview.css"/>
+    <link rel="stylesheet" type="text/css" href="css/faculty.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>
