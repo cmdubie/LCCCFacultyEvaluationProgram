@@ -10,14 +10,25 @@
 
     <label>Term:</label>
     
-    <asp:DropDownList ID="termDropDownList" runat="server">
-        <asp:ListItem>--default to current term--</asp:ListItem>
+    <asp:SqlDataSource ID="termSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Term] FROM [COURSESECTION]" ></asp:SqlDataSource>
+    
+    <asp:DropDownList ID="termDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="StickyTermSelected" AppendDataBoundItems="True" DataSourceID="termSqlDataSource" DataTextField="Term" DataValueField="Term">
+        <asp:ListItem Value="-1">--select a term--</asp:ListItem>
     </asp:DropDownList>
     
     <label>Class/Section:</label>
-    
-    <asp:DropDownList ID="classDropDownList" runat="server">
-        <asp:ListItem>--select a class/section--</asp:ListItem>
+
+    <asp:SqlDataSource ID="classSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select CourseID + ' - ' + Section AS ClassSection, ClassNum
+from COURSESECTION AS cs
+where Term = @Term
+order by ClassSection">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="termDropDownList" Name="Term" PropertyName="SelectedValue" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+
+    <asp:DropDownList ID="classDropDownList" runat="server" AppendDataBoundItems="True" DataSourceID="classSqlDataSource" DataTextField="ClassSection" DataValueField="ClassNum" OnSelectedIndexChanged="EnableAddCommentButton" AutoPostBack="True">
+        <asp:ListItem Value="-1">--select a class/section--</asp:ListItem>
     </asp:DropDownList>
     
     <asp:panel runat="server" id="commentTextBoxPanel" DefaultButton="addCommentButton">

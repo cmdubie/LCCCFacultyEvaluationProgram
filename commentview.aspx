@@ -26,7 +26,7 @@
     <asp:SqlDataSource ID="classDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select CourseID + ' - ' + Section AS ClassSection, ClassNum
 from COURSESECTION AS cs
 where Term = @Term
-order by ClassSection">
+order by ClassSection" >
         <SelectParameters>
             <asp:ControlParameter ControlID="termDropDownList" Name="Term" PropertyName="SelectedValue" />
         </SelectParameters>

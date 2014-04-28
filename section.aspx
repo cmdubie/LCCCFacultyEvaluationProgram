@@ -26,7 +26,7 @@ FROM COURSESECTION AS cs INNER JOIN
      COURSE AS c ON cs.CourseID = c.CourseID LEFT OUTER JOIN 
      FACULTY AS f ON cs.EID = f.EID
 WHERE (cs.Term = @Param1)
-ORDER BY cs.ClassNum" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @NumberStudents, Evaluation = @Evaluation WHERE (ClassNum = @ClassNum) AND (Term = @Term)">
+ORDER BY cs.ClassNum" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @NumberStudents, Evaluation = @Evaluation WHERE (ClassNum = @ClassNum) AND (Term = @Term)" >
         <SelectParameters>
             <asp:ControlParameter ControlID="termDropDownList" Name="Param1" PropertyName="SelectedValue" />
         </SelectParameters>
