@@ -8,6 +8,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     <h2>Faculty</h2>
+    
+    <p>Use the edit function to add or change faculty email and status (full or part-time).</p>
+    <p>Use the delete function to remove a faculty member from the database.
         <asp:SqlDataSource ID="FacultyDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [FACULTY] WHERE [EID] = @EID" InsertCommand="INSERT INTO [FACULTY] ([Name], [Email], [Status], [EID]) VALUES (Name, @Email, Status, @EID)" SelectCommand="SELECT [Name], [Email], [Status], [EID] FROM [FACULTY] ORDER BY [Name]" UpdateCommand="UPDATE FACULTY SET Name = Name, Email = @Email, Status = @Status WHERE (EID = @EID)">
             <DeleteParameters>
                 <asp:Parameter Name="EID" Type="Int32" />

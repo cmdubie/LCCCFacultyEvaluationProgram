@@ -9,6 +9,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
     <h2>Class/Section</h2>
+    
+    <p>Select a term to view class/sections for that term.</p>
+    <p>Use the edit function to adjust the number of enrolled students or change the evaluation status.</p>
 
     <label>Term:</label>
 
@@ -143,9 +146,6 @@ ORDER BY cs.ClassNum" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @
             </asp:TemplateField>
             <asp:CommandField ShowEditButton="True" />
         </Columns>
-    </asp:GridView>
-    
-    <p>This section will have a gridview that will display all information for classes in the database.  Users will be able to edit or delete any entry in the table to make corrections.</p>
-
+    </asp:GridView>   
 </asp:Content>
 

@@ -169,11 +169,12 @@ a:hover {
 
 label {
     padding: 0 5px 0;
+    font-weight: bold;
 }
 
 .messageLabel {
     color: red;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 footer {
