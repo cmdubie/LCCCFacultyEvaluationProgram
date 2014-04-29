@@ -26,7 +26,26 @@ public partial class Commentview : System.Web.UI.Page
         }
     }
 
-    protected void StickyTermSelected(object sender, EventArgs e)
+    protected void TermDDLIndexChangedEvent(object sender, EventArgs e)
+    {
+        StickyTermSelected();
+
+        if (termDropDownList.SelectedIndex == 0)
+        {
+            classDropDownList.SelectedIndex = 0;
+        }
+
+        classDropDownList.Items.Clear();
+        var dummyItem = new ListItem { Value = "-1", Text = "--select a class/section--" };
+        classDropDownList.Items.Insert(0, dummyItem);
+        
+        if (termDropDownList.SelectedIndex > 0)
+        {
+            classDropDownList.DataBind();
+        }
+    }
+
+    protected void StickyTermSelected()
     {
         Session["stickyTerm"] = termDropDownList.SelectedValue;
     }

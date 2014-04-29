@@ -1,12 +1,18 @@
 ﻿
-#pageContent_pageContentSub_commentTextBox {
+#CommentTextBox {
     margin-top: 20px;
-    width: 90%;
-    height: 200px;
 }
 
 #pageContent_pageContentSub_addCommentButton {
     display: block;
     float: right;
-    margin: 20px 10% 0 0 ;
+    margin: -40px 25% 0 0 ;
+}
+
+.errorMessageParagraph {
+    width: 70%;
+}
+
+#charactersMessage {
+    padding: 15px 0 0 15px;
 }

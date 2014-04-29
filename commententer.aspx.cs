@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Activities.Expressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class commententer : System.Web.UI.Page
+public partial class Commententer : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         classDropDownList.Enabled = false;
-        addCommentButton.Enabled = false;
+        
+        if (classDropDownList.SelectedIndex == 0)
+        {
+            addCommentButton.Enabled = false;
+        }
 
         if (!IsPostBack)
         {
@@ -27,32 +29,68 @@ public partial class commententer : System.Web.UI.Page
         }
     }
 
-    protected void EnableAddCommentButton(object sender, EventArgs e)
+    protected void ClassDDLIndexChangedEvent(object sender, EventArgs e)
     {
         if (classDropDownList.SelectedIndex > 0)
         {
             addCommentButton.Enabled = true;
         }
+
+        CommentTextBox.Focus();
     }
 
-    protected void StickyTermSelected(object sender, EventArgs e)
+    protected void TermDDLIndexChangedEvent(object sender, EventArgs e)
     {
-        Session["stickyTerm"] = termDropDownList.SelectedValue;
+        StickyTermSelected();
+
+        if (termDropDownList.SelectedIndex == 0)
+        {
+            classDropDownList.SelectedIndex = 0;
+            addCommentButton.Enabled = false;
+        }
+
+        classDropDownList.Items.Clear();
+        var dummyItem = new ListItem {Value = "-1", Text = "--select a class/section--"};
+        classDropDownList.Items.Insert(0, dummyItem);
+        if (termDropDownList.SelectedIndex > 0)
+        {
+            classDropDownList.DataBind();         
+        }
+    }
+
+    protected void StickyTermSelected()
+    {
+        if (termDropDownList.SelectedIndex != 0)
+        {
+            Session["stickyTerm"] = termDropDownList.SelectedValue;
+        }
     }
 
     protected void addCommentButton_Click(object sender, EventArgs e)
     {
+        insertMessageLabel.Text = String.Empty;
+        exceptionMessageLabel.Text = String.Empty;
+
         try
         {
-            // code to insert the comment into the database goes here
+            var objDS = new SqlDataSource();
+            objDS.ProviderName = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ProviderName;
+            objDS.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            objDS.InsertCommand = "INSERT INTO COMMENT (ClassNum, Term, StudentComments) VALUES (@Class, @Term, @StudentComments)" ;
+            objDS.InsertParameters.Add("Class", classDropDownList.SelectedValue);
+            objDS.InsertParameters.Add("Term", termDropDownList.SelectedValue);
+            objDS.InsertParameters.Add("StudentComments", CommentTextBox.Text.Trim());
 
-            commentTextBox.Text = String.Empty;
-            commentTextBox.Focus();
-        }
-        catch (Exception)
-        {
+            objDS.Insert();
             
-            throw;
+            CommentTextBox.Text = String.Empty;
+            CommentTextBox.Focus();
+        }
+        catch (Exception ex)
+        {
+            insertMessageLabel.Text =
+                "There was an issue adding the comment to the database.  Please make sure you have selected a term and class in the drop-down menus.  If the problem persists, please restart the application and try again.";
+            exceptionMessageLabel.Text = ex.Message;
         }
 
     }

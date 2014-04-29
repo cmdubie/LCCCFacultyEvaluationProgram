@@ -9,9 +9,9 @@
 }
 
 th:last-child {
-    -webkit-box-shadow: 4px 4px 4px #00215a;
-    -ms-box-shadow: 4px 4px 4px #00215a;
-    box-shadow: 4px 4px 4px #00215a;
+    -webkit-box-shadow: 4px 0px 2px #00215a;
+    -ms-box-shadow: 4px 0px 2px #00215a;
+    box-shadow: 4px 0px 2px #00215a;
     -ms-border-top-right-radius: 5px;
     border-top-right-radius: 5px;
     border-right: none;
@@ -33,7 +33,7 @@ th {
  }
 
 td {
-    background-color: #ccc491;
+    background-color: #ddd5a2;
     border: 1px solid #7c7441;
     text-align: center;
     font-size: .8em;

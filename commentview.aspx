@@ -17,7 +17,7 @@
 
     <asp:SqlDataSource ID="TermDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Term] FROM [COURSESECTION]"></asp:SqlDataSource>
 
-    <asp:DropDownList ID="termDropDownList" runat="server" AppendDataBoundItems="True" DataSourceID="TermDataSource" DataTextField="Term" DataValueField="Term" AutoPostBack="True" OnSelectedIndexChanged="StickyTermSelected">
+    <asp:DropDownList ID="termDropDownList" runat="server" AppendDataBoundItems="True" DataSourceID="TermDataSource" DataTextField="Term" DataValueField="Term" AutoPostBack="True" OnSelectedIndexChanged="TermDDLIndexChangedEvent">
         <asp:ListItem Value="-1">--select a term--</asp:ListItem>
     </asp:DropDownList>
     
@@ -55,10 +55,10 @@ where CommentID = @CommentID">
         <Columns>
             <asp:TemplateField HeaderText="Student Comments" SortExpression="StudentComments">
                 <EditItemTemplate>
-                    <script type="text/javascript" language="Javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.1.min.js"></script>
+                    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("StudentComments") %>' TextMode="MultiLine" Columns="100" Rows="3" ClientIDMode="Static" />
                     <p>Max characters - 255: <label id="lblCharLeft"></label></p>
-                    <script language="javascript" type="text/javascript">
+                    <script type="text/javascript">
                         var maxLength = 255; // change here to change the max limit
                         // write the character left message
                         $(document).ready(function () {
