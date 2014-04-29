@@ -90,9 +90,12 @@ ul {
 a {
     color: black;
     font-weight: bold;
-    display: block;
     text-decoration: none;
     padding: 10px;
+}
+
+#mainNav a {
+    display: block;
 }
 
 a:hover {

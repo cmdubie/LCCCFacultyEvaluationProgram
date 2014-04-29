@@ -6,7 +6,17 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     <section>
-        <p>Information about what can be done on the data page will appear here.</p>
+        <ul class="sectionContents">
+            <li><a href="import.aspx">Import</a> - transfer data from a .csv file to the application database.</li>
+            <li><a href="faculty.aspx">Faculty</a> - view a table of all faculty members in the database and add or correct related information.</li>
+            <li><a href="section.aspx">Class/Section</a> - view a table of classes by term and correct related information.</li>
+            <li>Comments
+                <ul>
+                    <li><a href="commentview.aspx">View</a> - view a table of comments for a class in a given term and correct related information.</li>
+                    <li><a href="commententer.aspx">Enter</a> - enter comments for a class in a given term.</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 </asp:Content>
 

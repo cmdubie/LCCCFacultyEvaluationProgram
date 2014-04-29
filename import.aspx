@@ -8,9 +8,11 @@
     
     <h2>Import</h2>
     
-    <p>This paragraph will contain instructions for the name and location of the XML file to be imported.</p>
+    <p>Please ensure that the file "220.txt" has been converted to "220.csv."</p>
     
-    <p>A note will be added stating that the user can review the imported information by selecting the appropriate button at the top of the page.</p>
+    <p>Press the button to import the data from "220.csv" into the application database.</p>
+    
+    <p>You will recieve a message stating the success or failure of the import.</p>
     
     <p><asp:Label ID="importMessageLabel" CssClass="messageLabel" runat="server" Text="This label will display error and success messages pertaining to the import."></asp:Label></p>
     
