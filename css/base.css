@@ -94,7 +94,7 @@ a {
     padding: 10px;
 }
 
-#mainNav a {
+#mainNav a, .inlineNav a {
     display: block;
 }
 
