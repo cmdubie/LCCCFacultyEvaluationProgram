@@ -71,7 +71,7 @@
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
-                        &nbsp; &#45; &nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
+                        &nbsp;|| &nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

@@ -38,8 +38,11 @@ td {
     text-align: center;
     font-size: .8em;
     line-height: 50%;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: 0 8px;
+}
+
+td span {
+    margin: 10px 0;
 }
 
 td:first-child {

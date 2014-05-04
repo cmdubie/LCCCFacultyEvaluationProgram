@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="commentview.aspx.cs" Inherits="Commentview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="comments.aspx.cs" Inherits="Commentview" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
     <link rel="stylesheet" type="text/css" href="css/gridview.css"/>
-    <link rel="stylesheet" type="text/css" href="css/commentview.css"/>
+    <link rel="stylesheet" type="text/css" href="css/comments.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>
@@ -25,7 +25,7 @@
     
     <asp:SqlDataSource ID="classDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select CourseID + ' - ' + Section AS ClassSection, ClassNum
 from COURSESECTION AS cs
-where Term = @Term
+where Term = @Term and UPPER(Evaluation) = 'Y'
 order by ClassSection" >
         <SelectParameters>
             <asp:ControlParameter ControlID="termDropDownList" Name="Term" PropertyName="SelectedValue" />
@@ -35,12 +35,51 @@ order by ClassSection" >
     <asp:DropDownList ID="classDropDownList" runat="server" AutoPostBack="True" AppendDataBoundItems="True" DataSourceID="classDataSource" DataTextField="ClassSection" DataValueField="ClassNum" >
         <asp:ListItem Value="-1">--select a class/section--</asp:ListItem>
     </asp:DropDownList>
+
+    <asp:panel runat="server" id="commentTextBoxPanel" DefaultButton="addCommentButton">
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+                 
+        <asp:TextBox ID="CommentTextBox" runat="server" Text='<%# Bind("StudentComments") %>' TextMode="MultiLine" Columns="105" Rows="10" ClientIDMode="Static" />
+
+        <p class="errorMessageParagraph"><asp:Label ID="insertMessageLabel" CssClass="messageLabel" runat="server"></asp:Label></p>
+        <p class="errorMessageParagraph"><asp:Label runat="server" ID="exceptionMessageLabel" CssClass="messageLabel"></asp:Label></p>
+        
+        <p id="charactersMessage">Max characters - 1000: <label id="lblCharLeft"></label></p>
+        
+         <script type="text/javascript">
+             var maxLength = 1000; // change here to change the max limit
+             // write the character left message
+             $(document).ready(function () {
+                 $("#lblCharLeft").text(maxLength + " characters left");
+             });
+
+             // limit the characters
+             $("#CommentTextBox").keyup(function () {
+                 var text = $(this).val();
+                 var textLength = text.length;
+                 if (textLength > maxLength) {
+                     $(this).val(text.substring(0, (maxLength)));
+                     alert("Sorry, only " + maxLength + " characters are allowed");
+                 }
+                 else {
+                     $("#lblCharLeft").text((maxLength - textLength) + " characters left.");
+                 }
+             });
+        </script>
+        
+        <asp:Button ID="addCommentButton" runat="server" Text="Add Comment" OnClick="addCommentButton_Click" />
+        
+    </asp:panel>
     
     <asp:SqlDataSource ID="CommentSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [StudentComments],  CommentID
 FROM [COMMENT] 
-WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term))" UpdateCommand="update COMMENT
+WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC" UpdateCommand="update COMMENT
 set StudentComments = @StudentComments
-where CommentID = @CommentID">
+where CommentID = @CommentID" DeleteCommand="DELETE FROM COMMENT WHERE (CommentID = @CommentID)">
+        <DeleteParameters>
+            <asp:Parameter Name="CommentID" />
+        </DeleteParameters>
         <SelectParameters>
             <asp:ControlParameter ControlID="classDropDownList" Name="ClassNum" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="termDropDownList" Name="Term" PropertyName="SelectedValue" />
@@ -57,9 +96,9 @@ where CommentID = @CommentID">
                 <EditItemTemplate>
                     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("StudentComments") %>' TextMode="MultiLine" Columns="100" Rows="3" ClientIDMode="Static" />
-                    <p>Max characters - 255: <label id="lblCharLeft"></label></p>
+                    <p>Max characters - 1000: <label id="lblCharLeft"></label></p>
                     <script type="text/javascript">
-                        var maxLength = 255; // change here to change the max limit
+                        var maxLength = 1000; // change here to change the max limit
                         // write the character left message
                         $(document).ready(function () {
                             $("#lblCharLeft").text(maxLength + " characters left");
@@ -83,7 +122,16 @@ where CommentID = @CommentID">
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("StudentComments") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ShowEditButton="True" />
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                    &nbsp;|| &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                    &nbsp;|| &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
 

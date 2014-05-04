@@ -1,4 +1,12 @@
-﻿
+﻿td:first-child {
+    width: 635px;
+    text-align: left;
+}
+
+td {
+    line-height: 1.25em;
+}
+
 #CommentTextBox {
     margin-top: 20px;
 }
