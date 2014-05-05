@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-
 using System.Web.UI.WebControls;
 
 public partial class Commentreports : System.Web.UI.Page
@@ -70,6 +68,6 @@ public partial class Commentreports : System.Web.UI.Page
     protected void printCommentsButton_Click(object sender, EventArgs e)
     {
         Session["ctrl"] = ClassSectionCommentsGridView;
-        ClientScript.RegisterStartupScript(this.GetType(), "onclick", "<script language=javascript>window.open('Print.aspx','PrintMe','height=300px,width=300px,scrollbars=1');</script>");
+        ClientScript.RegisterStartupScript(GetType(), "onclick", "<script language=javascript>window.open('Print.aspx','PrintMe','height=300px,width=300px,scrollbars=1');</script>");
     }
 }
