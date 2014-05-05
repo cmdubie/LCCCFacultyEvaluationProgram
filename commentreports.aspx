@@ -35,7 +35,7 @@ order by ClassSection" >
         <asp:ListItem Value="0">--ALL CLASSES--</asp:ListItem>
     </asp:DropDownList>
     
-    <asp:Button ID="printCommentsButton" runat="server" Text="Print" /> 
+    <asp:Button ID="printCommentsButton" runat="server" Text="Print" OnClick="printCommentsButton_Click" /> 
 
     <p><asp:Label ID="printCommentsMessageLabel" CssClass="messageLabel" runat="server" Text=""></asp:Label></p>
     
