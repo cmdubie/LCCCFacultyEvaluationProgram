@@ -96,24 +96,24 @@ where CommentID = @CommentID" DeleteCommand="DELETE FROM COMMENT WHERE (CommentI
                 <EditItemTemplate>
                     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("StudentComments") %>' TextMode="MultiLine" Columns="100" Rows="3" ClientIDMode="Static" />
-                    <p>Max characters - 1000: <label id="lblCharLeft"></label></p>
+                    <p>Max characters - 1000: <label id="lblCharLeft2"></label></p>
                     <script type="text/javascript">
-                        var maxLength = 1000; // change here to change the max limit
+                        var maxLength2 = 1000; // change here to change the max limit
                         // write the character left message
                         $(document).ready(function () {
-                            $("#lblCharLeft").text(maxLength + " characters left");
+                            $("#lblCharLeft2").text(maxLength2 + " characters left");
                         });
 
                         // limit the characters
                         $("#TextBox1").keyup(function () {
-                            var text = $(this).val();
-                            var textLength = text.length;
-                            if (textLength > maxLength) {
-                                $(this).val(text.substring(0, (maxLength)));
-                                alert("Sorry, only " + maxLength + " characters are allowed");
+                            var text2 = $(this).val();
+                            var textLength2 = text2.length;
+                            if (textLength2 > maxLength2) {
+                                $(this).val(text2.substring(0, (maxLength2)));
+                                alert("Sorry, only " + maxLength2 + " characters are allowed");
                             }
                             else {
-                                $("#lblCharLeft").text((maxLength - textLength) + " characters left.");
+                                $("#lblCharLeft2").text((maxLength2 - textLength2) + " characters left.");
                             }
                         });
                     </script>

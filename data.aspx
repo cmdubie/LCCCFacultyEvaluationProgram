@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/data.master" AutoEventWireup="true" CodeFile="data.aspx.cs" Inherits="data" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
-    <link href="css/data.css" rel="stylesheet" type="text/css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="inlineNavSub" Runat="Server">
 </asp:Content>

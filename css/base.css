@@ -24,6 +24,14 @@ h2 {
     font-weight: 700;
 }
 
+#pageContent_aboutPanel h2 {
+    margin: 0;
+}
+
+.sectionContents li {
+    margin: 10px 0;
+}
+
 body {
     margin: auto; 
     color: black; 

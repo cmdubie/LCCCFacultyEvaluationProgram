@@ -27,7 +27,7 @@
             <ul>
                 <li><a href="data.aspx" title="Review and Enter information into the system">Data Entry and Review</a></li>
                 <li><a href="reports.aspx" title="Print and email various reports">Reports</a></li>
-                <li><a href="maintenance.aspx" title="Perform database back-up and other maintenance tasks" >Maintenance</a></li>
+                <%--<li><a href="maintenance.aspx" title="Perform database back-up and other maintenance tasks" >Maintenance</a></li>--%>
             </ul>
         </nav>
     </nav>
