@@ -9,7 +9,7 @@ public partial class Email : System.Web.UI.Page
             if (Session["stickyTerm"] != null)
             {
                 termDropDownList.SelectedValue = Session["stickyTerm"].ToString();
-                if (termDropDownList.SelectedIndex > 0)
+                if (Session["stickyTerm"].ToString() != "-1")
                 {
                     sendMailButton.Enabled = true;
                 }
