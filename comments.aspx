@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="pageContentSub" Runat="Server">
     
-    <h2>View Comments</h2>
+    <h2>Comments</h2>
     
     <p>Select a term and class/section to view the comments.</p>
     <p>Use the edit function to make any corrections to the comments.</p>
