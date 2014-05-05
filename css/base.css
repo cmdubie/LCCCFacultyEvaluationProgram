@@ -28,6 +28,10 @@ h2 {
     margin: 0;
 }
 
+#pageContent_aboutPanel h2 a {
+    padding: 0;
+}
+
 .sectionContents li {
     margin: 10px 0;
 }

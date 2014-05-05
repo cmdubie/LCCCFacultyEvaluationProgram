@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FEP.master.cs" Inherits="FEP" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FEP.master.cs" Inherits="Fep" %>
 
 <!DOCTYPE html>
 

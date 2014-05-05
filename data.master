@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="data.master.cs" Inherits="data" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/FEP.master" AutoEventWireup="true" CodeFile="data.master.cs" Inherits="Data" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <asp:ContentPlaceHolder runat="server" ID="head2"></asp:ContentPlaceHolder>

@@ -13,9 +13,9 @@ table {
 }
 
 th:last-child {
-    -webkit-box-shadow: 4px 0px 2px #00215a;
-    -ms-box-shadow: 4px 0px 2px #00215a;
-    box-shadow: 4px 0px 2px #00215a;
+    -webkit-box-shadow: 4px 0 2px #00215a;
+    -ms-box-shadow: 4px 0 2px #00215a;
+    box-shadow: 4px 0 2px #00215a;
     -ms-border-top-right-radius: 5px;
     border-top-right-radius: 5px;
     border-right: none;
