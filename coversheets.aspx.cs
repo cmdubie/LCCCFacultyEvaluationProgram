@@ -14,7 +14,10 @@ public partial class coversheets : System.Web.UI.Page
             if (Session["stickyTerm"] != null)
             {
                 termDropDownList.SelectedValue = Session["stickyTerm"].ToString();
-                printCoverSheetsButton.Enabled = true;
+                if (termDropDownList.SelectedIndex > 0)
+                {
+                    printCoverSheetsButton.Enabled = true;
+                }
             }
         }
     }

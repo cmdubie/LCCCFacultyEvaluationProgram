@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/report.master" AutoEventWireup="true" CodeFile="email.aspx.cs" Inherits="email" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/report.master" AutoEventWireup="true" CodeFile="email.aspx.cs" Inherits="Email" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
     <link href="css/gridview.css" rel="stylesheet" type="text/css"/>

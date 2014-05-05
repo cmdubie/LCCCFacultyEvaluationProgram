@@ -17,7 +17,10 @@ public partial class Commentview : System.Web.UI.Page
             if (Session["stickyTerm"] != null)
             {
                 termDropDownList.SelectedValue = Session["stickyTerm"].ToString();
-                classDropDownList.Enabled = true;
+                if (termDropDownList.SelectedIndex > 0)
+                {
+                    classDropDownList.Enabled = true;
+                }
             }
         }
 
