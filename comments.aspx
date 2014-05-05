@@ -32,7 +32,7 @@ order by ClassSection" >
         </SelectParameters>
     </asp:SqlDataSource>
 
-    <asp:DropDownList ID="classDropDownList" runat="server" AutoPostBack="True" AppendDataBoundItems="True" DataSourceID="classDataSource" DataTextField="ClassSection" DataValueField="ClassNum" >
+    <asp:DropDownList ID="classDropDownList" runat="server" AutoPostBack="True" AppendDataBoundItems="True" DataSourceID="classDataSource" DataTextField="ClassSection" DataValueField="ClassNum" OnSelectedIndexChanged="ClassDDLIndexChangedEvent">
         <asp:ListItem Value="-1">--select a class/section--</asp:ListItem>
     </asp:DropDownList>
 
@@ -90,7 +90,7 @@ where CommentID = @CommentID" DeleteCommand="DELETE FROM COMMENT WHERE (CommentI
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="CommentViewGridView" runat="server" DataKeyNames="CommentID" AutoGenerateColumns="False" DataSourceID="CommentSqlDataSource">
+    <asp:GridView ID="CommentViewGridView" runat="server" DataKeyNames="CommentID" AutoGenerateColumns="False" DataSourceID="CommentSqlDataSource" CssClass="gridViewClass">
         <Columns>
             <asp:TemplateField HeaderText="Student Comments" SortExpression="StudentComments">
                 <EditItemTemplate>

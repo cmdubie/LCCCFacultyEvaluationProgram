@@ -1,4 +1,8 @@
-﻿table {
+﻿.gridViewClass {
+    border-collapse: separate !important;
+}
+
+table {
     margin-top: 25px;
     -webkit-box-shadow: 4px 4px 4px #7c7441;
     -ms-box-shadow: 4px 4px 4px #7c7441;
@@ -38,11 +42,7 @@ td {
     text-align: center;
     font-size: .8em;
     line-height: 1.25;
-    padding: 0 8px;
-}
-
-td span {
-    margin: 10px 0;
+    padding: 8px 10px;
 }
 
 td:first-child {
@@ -61,9 +61,4 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
     -ms-border-bottom-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-td a {
-    display: inline-block;
-    margin: 0 -10px;
 }

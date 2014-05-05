@@ -27,7 +27,7 @@
                 <asp:Parameter Name="Status" Type="Char"/>
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="FacultyDataSource">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="FacultyDataSource" CssClass="gridViewClass">
             <Columns>
                 <asp:TemplateField HeaderText="Name" SortExpression="Name">
                     <EditItemTemplate>

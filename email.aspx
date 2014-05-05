@@ -38,7 +38,7 @@ ORDER BY f.Name">
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="FacultyDataSource">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="FacultyDataSource" CssClass="gridViewClass">
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
             <asp:BoundField DataField="EID" HeaderText="Empolyee Number" ReadOnly="True" SortExpression="EID" />

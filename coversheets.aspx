@@ -39,7 +39,7 @@ ORDER BY cs.CourseID
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="ClassSectionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Term,ClassNum" DataSourceID="ClassGVSqlDataSource">
+    <asp:GridView ID="ClassSectionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Term,ClassNum" DataSourceID="ClassGVSqlDataSource" CssClass="gridViewClass">
         <Columns>
             <asp:BoundField DataField="ClassNum" HeaderText="No." ReadOnly="True" SortExpression="ClassNum" />
             <asp:TemplateField HeaderText="Course" SortExpression="CourseID">

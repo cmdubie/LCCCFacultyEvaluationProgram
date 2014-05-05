@@ -1,0 +1,9 @@
+﻿#pageContent_pageContentSub_printCommentsButton {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+td:first-child {
+    width: 635px;
+    text-align: left;
+}
