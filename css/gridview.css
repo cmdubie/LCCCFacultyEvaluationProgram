@@ -1,4 +1,8 @@
-﻿table {
+﻿.gridViewClass {
+    border-collapse: separate !important;
+}
+
+table {
     margin-top: 25px;
     -webkit-box-shadow: 4px 4px 4px #7c7441;
     -ms-box-shadow: 4px 4px 4px #7c7441;
@@ -9,9 +13,9 @@
 }
 
 th:last-child {
-    -webkit-box-shadow: 4px 4px 4px #00215a;
-    -ms-box-shadow: 4px 4px 4px #00215a;
-    box-shadow: 4px 4px 4px #00215a;
+    -webkit-box-shadow: 4px 0px 2px #00215a;
+    -ms-box-shadow: 4px 0px 2px #00215a;
+    box-shadow: 4px 0px 2px #00215a;
     -ms-border-top-right-radius: 5px;
     border-top-right-radius: 5px;
     border-right: none;
@@ -33,13 +37,12 @@ th {
  }
 
 td {
-    background-color: #ccc491;
+    background-color: #ddd5a2;
     border: 1px solid #7c7441;
     text-align: center;
     font-size: .8em;
-    line-height: 50%;
-    padding-left: 8px;
-    padding-right: 8px;
+    line-height: 1.25;
+    padding: 8px 10px;
 }
 
 td:first-child {
@@ -58,9 +61,4 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
     -ms-border-bottom-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-td a {
-    display: inline-block;
-    margin: 0 -10px;
 }

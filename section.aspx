@@ -26,7 +26,8 @@ FROM COURSESECTION AS cs INNER JOIN
      COURSE AS c ON cs.CourseID = c.CourseID LEFT OUTER JOIN 
      FACULTY AS f ON cs.EID = f.EID
 WHERE (cs.Term = @Param1)
-ORDER BY cs.ClassNum" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @NumberStudents, Evaluation = @Evaluation WHERE (ClassNum = @ClassNum) AND (Term = @Term)" >
+ORDER BY cs.CourseID
+" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @NumberStudents, Evaluation = @Evaluation WHERE (ClassNum = @ClassNum) AND (Term = @Term)" >
         <SelectParameters>
             <asp:ControlParameter ControlID="termDropDownList" Name="Param1" PropertyName="SelectedValue" />
         </SelectParameters>
@@ -38,7 +39,7 @@ ORDER BY cs.ClassNum" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="ClassSectionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Term,ClassNum" DataSourceID="ClassGVSqlDataSource">
+    <asp:GridView ID="ClassSectionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Term,ClassNum" DataSourceID="ClassGVSqlDataSource" CssClass="gridViewClass">
         <Columns>
             <asp:BoundField DataField="ClassNum" HeaderText="No." ReadOnly="True" SortExpression="ClassNum" />
             <asp:TemplateField HeaderText="Course" SortExpression="CourseID">
@@ -144,7 +145,15 @@ ORDER BY cs.ClassNum" UpdateCommand="UPDATE COURSESECTION SET NumberStudents = @
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("Evaluation") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ShowEditButton="True" />
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                    &nbsp;|| &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>   
 </asp:Content>

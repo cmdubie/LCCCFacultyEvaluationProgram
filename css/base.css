@@ -24,6 +24,14 @@ h2 {
     font-weight: 700;
 }
 
+#pageContent_aboutPanel h2 {
+    margin: 0;
+}
+
+.sectionContents li {
+    margin: 10px 0;
+}
+
 body {
     margin: auto; 
     color: black; 
@@ -90,9 +98,12 @@ ul {
 a {
     color: black;
     font-weight: bold;
-    display: block;
     text-decoration: none;
     padding: 10px;
+}
+
+#mainNav a, .inlineNav a {
+    display: block;
 }
 
 a:hover {

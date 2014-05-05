@@ -10,13 +10,7 @@
             <li><a class="subButton" href="import.aspx" title="Import data from a PeopleSoft XML file">Import</a></li>
             <li><a class="subButton" href="faculty.aspx" title="Display and change faculty information">Faculty</a></li>
             <li><a class="subButton" href="section.aspx" title="Display and change class information">Class/Section</a></li>
-            <li><a class="subButton" title="Display and enter comments">Comments</a>
-                <ul>
-                    <li><a class="subButton" href="commentview.aspx" title="View comments">View</a></li>
-                    <li><a class="subButton" href="commententer.aspx" title="Enter comments">Enter</a></li>
-                </ul>
-            </li>
-
+            <li><a class="subButton" href="comments.aspx" title="Add, change, or delete comments.">Comments</a></li>
         </ul>
     </nav>
     <asp:ContentPlaceHolder ID="inlineNavSub" runat="server"></asp:ContentPlaceHolder>

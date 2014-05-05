@@ -1,0 +1,26 @@
+﻿td:first-child {
+    width: 635px;
+    text-align: left;
+}
+
+td span {
+    display: inline-block;
+}
+
+#CommentTextBox {
+    margin-top: 20px;
+}
+
+#pageContent_pageContentSub_addCommentButton {
+    display: block;
+    float: right;
+    margin: -40px 25% 0 0 ;
+}
+
+.errorMessageParagraph {
+    width: 70%;
+}
+
+#charactersMessage {
+    padding: 15px 0 0 15px;
+}

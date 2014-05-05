@@ -27,7 +27,7 @@
                 <asp:Parameter Name="Status" Type="Char"/>
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="FacultyDataSource">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="FacultyDataSource" CssClass="gridViewClass">
             <Columns>
                 <asp:TemplateField HeaderText="Name" SortExpression="Name">
                     <EditItemTemplate>
@@ -71,7 +71,7 @@
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
-                        &nbsp; &#45; &nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
+                        &nbsp;|| &nbsp;<asp:LinkButton ID="DeleteLinkButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
