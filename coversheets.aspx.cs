@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 
 public partial class Coversheets : System.Web.UI.Page
 {
@@ -31,4 +32,11 @@ public partial class Coversheets : System.Web.UI.Page
             printCoverSheetsButton.Enabled = true;
         }
     }
+    protected void btnPrint_Click(object sender, EventArgs e)
+    {
+        Session["ctrl"] = ClassSectionGridView;
+        ClientScript.RegisterStartupScript(this.GetType(), "onclick", "<script language=javascript>window.open('Print.aspx','PrintMe','height=300px,width=300px,scrollbars=1');</script>");
+    }
+
+    public object printPanel { get; set; }
 }
