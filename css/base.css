@@ -192,6 +192,10 @@ label {
     font-weight: bold;
 }
 
+#pageContent_pageContentSub_printPanel {
+    display: none;
+}
+
 footer {
     clear: both;
 }
