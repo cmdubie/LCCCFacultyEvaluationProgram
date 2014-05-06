@@ -12,6 +12,9 @@
     </asp:Panel>
     
     <asp:Panel runat="server" ID="aboutPanel">
+        
+        <h2>About</h2>
+            <p>This application was developed by students of the CISS 247 - Systems Development class in the Spring of 2014.  The intention of the application is to assist in the management of the Student Evaluation of Faculty process.  There are no implied guarantees or warrantees and support for the product is limited to the Users Manual.</p>
         <h2><a href="data.aspx">Data Entry and Review</a></h2>
             <ul class="sectionContents">
                 <li><a href="import.aspx">Import</a> - transfer data from a .csv file to the application database.</li>

@@ -129,7 +129,7 @@ where CommentID = @CommentID" DeleteCommand="DELETE FROM COMMENT WHERE (CommentI
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
-                    &nbsp;|| &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm(&quot;Okay to DELETE?&quot;)"></asp:LinkButton>
+                    &nbsp;|| &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Okay to DELETE?')"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

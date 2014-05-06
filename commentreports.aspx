@@ -64,6 +64,80 @@ WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC" >
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-   
-</asp:Content>
+    
+<!-- attempt to create a report panel with repeaters instead of a gridview - PrintHelper does not acknowledge 
+    repeaters. Attempted to pass it only commentRepeater(ID) and it did not print anything. -->
+
+    <asp:Panel runat="server" ID="printPanel"><!-- make visible in base.css to view on page and debug -->
+        
+        <asp:SqlDataSource ID="DetailsHeaderDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT f.Name, cs.Term, cs.ClassNum, (cs.CourseID + ' ' + cs.Section + ' - ' + c.Title) AS CourseSection 
+                            FROM COURSESECTION AS cs 
+                            INNER JOIN COURSE AS c ON cs.CourseID = c.CourseID 
+                            LEFT OUTER JOIN FACULTY AS f ON cs.EID = f.EID
+                            WHERE (cs.Term = @Param1) AND (cs.ClassNum = @Param2) 
+                            ORDER BY cs.CourseID">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="termDropDownList" Name="Param1" PropertyName="SelectedValue" />
+                <asp:ControlParameter ControlID="classDropDownList" Name="Param2" PropertyName="SelectedValue" />
+            </SelectParameters>
+            <UpdateParameters>
+            </UpdateParameters>
+        </asp:SqlDataSource>
+            
+        <h2>Student Comment Report</h2>
+        <asp:DetailsView ID="commentReportHeaderDetailsView" runat="server" DataSourceID="DetailsHeaderDataSource" AutoGenerateRows="False" DataKeyNames="Term,ClassNum" GridLines="None" HorizontalAlign="Left" >
+                
+            <FieldHeaderStyle Width="125px" />
+            <Fields>
+                <asp:BoundField DataField="Term" HeaderText="Term:" ReadOnly="True" SortExpression="Term" >
+                <ControlStyle BorderStyle="None" Width="600px" />
+                <ItemStyle HorizontalAlign="Justify" Width="600px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="CourseSection" HeaderText="Course/Section:" ReadOnly="True" SortExpression="CourseSection" >
+                <ControlStyle Width="600px" />
+                <ItemStyle HorizontalAlign="Left" Width="600px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Name" HeaderText="Instructor:" SortExpression="Name" >
+                <ControlStyle Width="600px" />
+                <ItemStyle HorizontalAlign="Left" Width="600px" />
+                </asp:BoundField>
+            </Fields>
+            <RowStyle HorizontalAlign="Left" Width="600px" Wrap="False" />
+                
+
+        </asp:DetailsView>
+
+        <p></p>
+
+        <asp:SqlDataSource ID="commentGVDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand=" SELECT [StudentComments],  CommentID
+                            FROM [COMMENT] 
+                            WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) 
+                            ORDER BY CommentID DESC" >
+            <DeleteParameters>
+            </DeleteParameters>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="classDropDownList" Name="ClassNum" PropertyName="SelectedValue" />
+                <asp:ControlParameter ControlID="termDropDownList" Name="Term" PropertyName="SelectedValue" />
+            </SelectParameters>
+            <UpdateParameters>
+            </UpdateParameters>
+        </asp:SqlDataSource>
+
+        <asp:GridView ID="commentReportCommentsGridView" runat="server" DataSourceID="commentGVDataSource" AutoGenerateColumns="False" CssClass="gridViewClass" GridLines="None" CellPadding="10" CellSpacing="8">
+            <Columns>
+                <asp:TemplateField HeaderText="Student Comments" SortExpression="StudentComments">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("StudentComments") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("StudentComments") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+    </asp:Panel>
+
+ </asp:Content>
 
