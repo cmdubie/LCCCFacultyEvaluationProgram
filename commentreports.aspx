@@ -84,8 +84,10 @@ WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC" >
             <UpdateParameters>
             </UpdateParameters>
         </asp:SqlDataSource>
-            
+
+  
         <h2>Student Comment Report</h2>
+        
         <asp:DetailsView ID="commentReportHeaderDetailsView" runat="server" DataSourceID="DetailsHeaderDataSource" AutoGenerateRows="False" DataKeyNames="Term,ClassNum" GridLines="None" HorizontalAlign="Left" >
                 
             <FieldHeaderStyle Width="125px" />
@@ -108,7 +110,7 @@ WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC" >
 
         </asp:DetailsView>
 
-        <p></p>
+        <p>-</p>
 
         <asp:SqlDataSource ID="commentGVDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
             SelectCommand=" SELECT [StudentComments],  CommentID
@@ -124,7 +126,7 @@ WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC" >
             <UpdateParameters>
             </UpdateParameters>
         </asp:SqlDataSource>
-
+        
         <asp:GridView ID="commentReportCommentsGridView" runat="server" DataSourceID="commentGVDataSource" AutoGenerateColumns="False" CssClass="gridViewClass" GridLines="None" CellPadding="10" CellSpacing="8">
             <Columns>
                 <asp:TemplateField HeaderText="Student Comments" SortExpression="StudentComments">
@@ -137,6 +139,7 @@ WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC" >
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+               
     </asp:Panel>
 
  </asp:Content>
