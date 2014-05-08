@@ -19,7 +19,7 @@
         <asp:ListItem Value="-1">--select a term--</asp:ListItem>
     </asp:DropDownList>
 
-    <asp:Button ID="printCoverSheetsButton" runat="server" Text="Print" Enabled="False"/> 
+    <asp:Button ID="printCoverSheetsButton" runat="server" Text="Print" Enabled="False" OnClick="btnPrint_Click"/> 
     
     <asp:SqlDataSource ID="ClassGVSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT f.Name, cs.Term, cs.ClassNum, cs.CourseID, c.Title, cs.Section, cs.Evaluation, cs.NumberStudents 
 FROM COURSESECTION AS cs INNER JOIN 
@@ -38,7 +38,7 @@ ORDER BY cs.CourseID
             <asp:Parameter Name="Term" />
         </UpdateParameters>
     </asp:SqlDataSource>
-
+    
     <asp:GridView ID="ClassSectionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="Term,ClassNum" DataSourceID="ClassGVSqlDataSource" CssClass="gridViewClass">
         <Columns>
             <asp:BoundField DataField="ClassNum" HeaderText="No." ReadOnly="True" SortExpression="ClassNum" />
@@ -67,11 +67,7 @@ ORDER BY cs.CourseID
                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("NumberStudents") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Eval?" SortExpression="Evaluation">
-                <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("Evaluation") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            
         </Columns>
     </asp:GridView>      
 
