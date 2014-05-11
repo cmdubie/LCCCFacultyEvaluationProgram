@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Configuration;
 using System.Web;
@@ -45,7 +46,7 @@ public class PrintHelper
         HttpContext.Current.Response.End();
     }
 
-    public static void PrintWebControl(Control[] ctrlArray, string script)
+    public static void PrintWebControl(ArrayList ctrlArray, string script)
     {
         var stringWrite = new StringWriter();
         var htmlWrite = new HtmlTextWriter(stringWrite);
@@ -63,7 +64,7 @@ public class PrintHelper
                 control.Width = w;
             }
 
-            frm.Controls.Add(ctrl);
+            frm.Controls.Add((WebControl)ctrl);          
         }
 
         if (script != string.Empty)

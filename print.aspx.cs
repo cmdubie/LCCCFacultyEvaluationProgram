@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Web.UI;
 
 public partial class Print : Page
@@ -6,11 +7,11 @@ public partial class Print : Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        var ctrl = (Control) Session["ctrl"];
-        PrintHelper.PrintWebControl(ctrl, String.Empty);
+        //var ctrl = (Control) Session["ctrl"];
+        //PrintHelper.PrintWebControl(ctrl, String.Empty);
 
-        var ctrlArray = (Control[])Session["ctrlArray"];
-        PrintHelper.PrintWebControl(ctrl, String.Empty);
+        var ctrlArray = (ArrayList)Session["ctrlList"];
+        PrintHelper.PrintWebControl(ctrlArray, String.Empty);
     }
     
 }
