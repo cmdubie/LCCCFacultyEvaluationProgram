@@ -72,6 +72,8 @@ public partial class Commentreports : System.Web.UI.Page
 
     protected void printCommentsButton_Click(object sender, EventArgs e)
     {
+        Session["ctrlList"] = null;
+        
         if (classDropDownList.SelectedValue == "0")
         {
             var panelList = new ArrayList();
@@ -105,7 +107,7 @@ public partial class Commentreports : System.Web.UI.Page
                         ConnectionString =
                             ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString,
                         SelectCommand =
-                            "SELECT [StudentComments],  CommentID FROM [COMMENT] WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC"
+                            "SELECT [StudentComments], CommentID FROM [COMMENT] WHERE (([ClassNum] = @ClassNum) AND ([Term] = @Term)) ORDER BY CommentID DESC"
                     };
 
                 commentGVDataSource2.SelectParameters.Add("ClassNum", headerSource[i][2].ToString());
@@ -124,8 +126,6 @@ public partial class Commentreports : System.Web.UI.Page
             Session["ctrlList"] = panelList;
             ClientScript.RegisterStartupScript(GetType(), "onclick",
                 "<script language=javascript>window.open('Print.aspx','PrintMe','height=300px,width=300px,scrollbars=1');</script>");
-
-            //Session["ctrlList"] = new ArrayList();
         }
         else
         {
