@@ -125,7 +125,7 @@ public partial class Commentreports : System.Web.UI.Page
             ClientScript.RegisterStartupScript(GetType(), "onclick",
                 "<script language=javascript>window.open('Print.aspx','PrintMe','height=300px,width=300px,scrollbars=1');</script>");
 
-            Session["ctrlList"] = new ArrayList();
+            //Session["ctrlList"] = new ArrayList();
         }
         else
         {
